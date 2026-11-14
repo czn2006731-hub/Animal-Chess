@@ -1,0 +1,15 @@
+[Unit]
+Description=Animal Fight game server
+After=network.target mysql.service
+
+[Service]
+Type=simple
+User=deploy
+WorkingDirectory=/home/deploy/animalfight/backend
+ExecStart=/home/deploy/animalfight/backend/build/animalfight /home/deploy/animalfight/backend/config.json
+Restart=on-failure
+RestartSec=3
+Environment=TZ=Asia/Shanghai
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+.login-page { min-height: 100vh; overflow: hidden; }
+.login-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(360px, .72fr); align-items: center; gap: clamp(48px, 9vw, 130px); min-height: calc(100vh - 76px); padding: 42px 0 72px; }
+.hero-copy { position: relative; max-width: 600px; }
+.hero-copy .title em { color: var(--mint-deep); font-style: normal; }
+.hero-copy .subtitle { max-width: 490px; margin: 22px 0; }
+.feature-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.feature-list span { padding: 8px 11px; border: 1px solid var(--line); border-radius: 10px; background: rgb(255 255 255 / .65); color: var(--muted); font-size: 13px; font-weight: 700; }
+.animal-row { display: flex; gap: 12px; margin-top: 42px; }
+.animal-row i { display: grid; width: 52px; height: 52px; place-items: center; border: 1px solid #cfe7df; border-radius: 18px; background: #f8fffc; color: var(--mint-deep); font-size: 19px; font-style: normal; font-weight: 900; box-shadow: 0 8px 18px rgb(33 119 92 / .08); }
+.animal-row i:nth-child(2) { transform: translateY(12px); color: var(--aqua); }.animal-row i:nth-child(3) { transform: translateY(-6px); color: var(--gold); }.animal-row i:nth-child(4) { transform: translateY(8px); color: var(--coral); }
+.auth-card { padding: 10px; }.auth-card form { padding: 30px 24px 24px; }.auth-card h2 { margin: 0; font-size: 25px; letter-spacing: -.04em; }.auth-card form > p:not(.notice) { margin: 8px 0 25px; color: var(--muted); font-size: 14px; }.auth-card label { display: grid; gap: 8px; margin: 15px 0; color: #315c56; font-size: 13px; font-weight: 800; }.auth-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; padding: 5px; border-radius: 15px; background: #edf7f4; }.auth-switch button { min-height: 40px; border: 0; border-radius: 11px; background: transparent; color: var(--muted); font-weight: 800; }.auth-switch button.active { background: white; color: var(--mint-deep); box-shadow: 0 3px 10px rgb(30 85 71 / .10); }.submit { width: 100%; margin-top: 8px; }
+@media (max-width: 760px) { .login-layout { grid-template-columns: 1fr; gap: 35px; min-height: auto; padding-top: 30px; }.hero-copy { max-width: none; }.animal-row { margin-top: 28px; }.auth-card { max-width: 520px; width: 100%; }.login-layout .title { font-size: clamp(36px, 11vw, 52px); } }
+

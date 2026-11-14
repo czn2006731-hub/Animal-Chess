@@ -1,0 +1,3 @@
+CREATE USER IF NOT EXISTS 'animalfight_app'@'localhost' IDENTIFIED BY 'REPLACE_WITH_A_LONG_RANDOM_PASSWORD';
+GRANT SELECT, INSERT, UPDATE ON animalfight.* TO 'animalfight_app'@'localhost';
+FLUSH PRIVILEGES;

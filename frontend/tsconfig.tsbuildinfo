@@ -1,0 +1,1 @@
+{"root":["./src/login/main.ts","./src/match/main.ts","./src/room/main.ts","./src/shared/api.ts","./src/shared/types.ts","./src/login/app.vue","./src/match/app.vue","./src/room/app.vue","./src/shared/brand.vue"],"version":"5.9.3"}

@@ -1,0 +1,20 @@
+{
+  "listeners": [
+    { "address": "0.0.0.0", "port": 8080, "https": false }
+  ],
+  "db_clients": [
+    {
+      "name": "animalfight_mysql",
+      "rdbms": "mysql",
+      "host": "127.0.0.1",
+      "port": 3306,
+      "dbname": "animalfight",
+      "user": "animalfight_app",
+      "passwd": "CHANGE_THIS_PASSWORD",
+      "connection_number": 4,
+      "is_fast": false,
+      "charset": "utf8mb4"
+    }
+  ]
+}
+
