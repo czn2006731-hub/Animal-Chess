@@ -5,9 +5,11 @@
 #include <drogon/orm/Exception.h>
 #include <drogon/orm/Field.h>
 #include <drogon/orm/Result.h>
+#include <drogon/orm/ResultIterator.h>
 #include <drogon/orm/Row.h>
 
 #include "ServerApp.h"
+#include "database/Database.h"
 #include "utils/Utils.h"
 
 namespace animalfight {
@@ -69,7 +71,11 @@ void UserManager::ranking(int limit, RankingCallback callback) const {
             for (const auto &row : result) {
                 const auto user = profileFromRow(row);
                 const auto total = user.wins + user.losses + user.draws;
-                ranks.push_back({user, position++, total == 0 ? 0 : (user.wins * 100 / total)});
+                RankItem item;
+                static_cast<UserProfile &>(item) = user;
+                item.rank = position++;
+                item.winRate = total == 0 ? 0 : (user.wins * 100 / total);
+                ranks.push_back(std::move(item));
             }
             callback(std::move(ranks), "");
         },
