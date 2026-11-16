@@ -2,7 +2,9 @@
 
 #include <algorithm>
 
+#include <drogon/orm/Exception.h>
 #include <drogon/orm/Result.h>
+#include <drogon/orm/Row.h>
 
 #include "ServerApp.h"
 #include "utils/Utils.h"
