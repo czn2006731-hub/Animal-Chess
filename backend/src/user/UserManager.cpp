@@ -3,6 +3,7 @@
 #include <algorithm>
 
 #include <drogon/orm/Exception.h>
+#include <drogon/orm/Field.h>
 #include <drogon/orm/Result.h>
 #include <drogon/orm/Row.h>
 
