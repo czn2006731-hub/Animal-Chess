@@ -11,13 +11,13 @@
 namespace animalfight {
 
 std::unique_ptr<Database> ServerApp::database_;
+std::mutex ServerApp::databaseMutex_;
 std::unique_ptr<SessionManager> ServerApp::sessions_;
 std::unique_ptr<UserManager> ServerApp::users_;
 std::unique_ptr<MatchManager> ServerApp::matches_;
 std::unique_ptr<RoomManager> ServerApp::rooms_;
 
 void ServerApp::initialize() {
-    database_ = std::make_unique<Database>();
     sessions_ = std::make_unique<SessionManager>();
     users_ = std::make_unique<UserManager>();
     rooms_ = std::make_unique<RoomManager>();
@@ -29,7 +29,8 @@ MatchManager &ServerApp::matches() { if (!matches_) throw std::logic_error("Serv
 RoomManager &ServerApp::rooms() { if (!rooms_) throw std::logic_error("ServerApp is not initialized"); return *rooms_; }
 
 Database &ServerApp::database() {
-    if (!database_) throw std::logic_error("ServerApp is not initialized");
+    std::lock_guard lock(databaseMutex_);
+    if (!database_) database_ = std::make_unique<Database>();
     return *database_;
 }
 

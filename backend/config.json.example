@@ -11,7 +11,7 @@
       "dbname": "animalfight",
       "user": "animalfight_app",
       "passwd": "CHANGE_THIS_PASSWORD",
-      "connection_number": 4,
+      "number_of_connections": 4,
       "is_fast": false,
       "charset": "utf8mb4"
     }

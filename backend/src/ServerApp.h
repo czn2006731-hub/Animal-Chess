@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include <mutex>
 
 namespace animalfight {
 
@@ -22,6 +23,7 @@ class ServerApp {
 
   private:
     static std::unique_ptr<Database> database_;
+    static std::mutex databaseMutex_;
     static std::unique_ptr<SessionManager> sessions_;
     static std::unique_ptr<UserManager> users_;
     static std::unique_ptr<MatchManager> matches_;
